@@ -1,0 +1,312 @@
+:root {
+  --color-dark-blue-300: #387e96;
+  --color-dark-blue-500: #065e7c;
+  --color-title: #202024;
+  --color-text: #121214;
+  --color-desktop-bg: #f4fcff;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* font*/
+body,
+html {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+}
+
+/* Header */
+
+header {
+  background-color: var(--color-dark-blue-500);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2.6rem;
+  justify-content: center;
+  padding: 1.6rem 2.8rem 1.6rem;
+}
+
+.avatar {
+  width: 4.2rem;
+  height: 4.2rem;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1.2rem 0 1.2rem 1.4rem;
+  background-color: var(--color-dark-blue-300);
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+}
+
+.input-wrapper input::placeholder {
+  color: white;
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+}
+
+/* main */
+.center-image {
+  width: 100%;
+}
+
+.left,
+section {
+  margin: 3rem 2.4rem 0 2.2rem;
+}
+
+.left div img {
+  margin-bottom: 3rem;
+}
+
+main h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+  margin-bottom: 0.8rem;
+}
+
+section h2 {
+  line-height: 160%;
+  margin-top: 3.2rem;
+  margin-bottom: 3.4rem;
+}
+
+/* Section */
+
+.artigo {
+  max-width: 25rem;
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  border-radius: 0.5rem;
+}
+
+.notice img {
+  height: 10rem;
+  width: 16rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-right: 1.6rem;
+}
+
+.notice h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.notice p {
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+
+.feedback button + button {
+  margin-left: 1.2rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
+/* footer */
+footer {
+  background-color: var(--color-dark-blue-500);
+  color: #dcdcdc;
+  text-align: center;
+  padding: 1.6rem 0;
+  font-weight: 600;
+}
+
+/* Hovers/animations */
+
+.avatar,
+.feedback img,
+.notice img {
+  transition: transform 0.3s ease, filter 0.3s ease, cursor 0.3s ease;
+}
+
+nav > img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: contrast(200%);
+  transition: all 0.3s ease-in-out;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: contrast(120%);
+  transition: all 0.3s ease-in-out;
+}
+
+.notice:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
+
+.feedback img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  filter: contrast(200%);
+  transition: all 0.3s ease;
+}
+
+/* Media queries */
+@media (max-width: 430px) {
+  nav {
+    padding: 1.6rem 2rem 1.6rem;
+  }
+
+  .notice {
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+  }
+
+  .notice img {
+    max-height: 9.4rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 0;
+  }
+
+  main h2 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  nav form {
+    flex: 1;
+  }
+
+  nav {
+    max-width: 90rem;
+    margin: auto;
+  }
+
+  .center-image {
+    max-height: 40rem;
+    object-fit: cover;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1rem;
+  }
+
+  section h2 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    background-color: #f4fcff;
+  }
+
+  .app {
+    display: grid;
+    margin: auto;
+    gap: 4rem 3.4rem;
+    grid-template-areas:
+      "header header"
+      "main section"
+      "footer footer";
+  }
+
+  header {
+    height: 7.2rem;
+    grid-area: header;
+  }
+
+  nav {
+    max-width: 100rem;
+    padding: 1.6rem 0;
+    margin: auto;
+  }
+
+  main {
+    max-width: 80rem;
+    grid-area: main;
+    justify-self: end;
+  }
+
+  section {
+    display: block;
+    max-width: 39rem;
+    grid-area: section;
+    margin: 0 0 0 0;
+  }
+
+  section h2 {
+    margin-top: 0;
+  }
+
+  .center-image {
+    border-radius: 10px;
+    max-height: auto;
+    object-fit: cover;
+  }
+  footer {
+    height: 6rem;
+    padding: 0;
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left {
+    margin: 3rem 0;
+  }
+
+  .left p {
+    line-height: 160%;
+  }
+}
+
+@media (min-width: 1430px) {
+  nav {
+    max-width: 122rem;
+  }
+}
