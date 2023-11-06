@@ -153,7 +153,8 @@ footer {
 
 .avatar,
 .feedback img,
-.notice img {
+.notice img,
+nav > img {
   transition: transform 0.3s ease, filter 0.3s ease, cursor 0.3s ease;
 }
 
